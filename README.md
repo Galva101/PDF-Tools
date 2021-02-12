@@ -7,7 +7,7 @@ This script can be used to strip all PDF documents in the same folder as the fil
 This information will be replaced by empty strings.
 
 ## Format
-This script reformats all PDFs in the same Folder to a specified grid on a new page, e.g. onto a 2x2 Grid. The new page size is calculated based on the PDFs own page size, and the
+This script reformats every PDFs separately in the same Folder by taking its pages and aligning them to a specified grid on a new page, e.g. onto a 2x2 Grid. The new page size is calculated based on the PDFs own page size, and the
 amount of horizontal and vertical cells can easily be changed in the script. The main use is to provide lossless reformatting, since many "Print to PDF" options compress fonts and vector based graphics.
 
 ## Merge
