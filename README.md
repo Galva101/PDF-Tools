@@ -2,6 +2,9 @@
 This is a set of Python Scripts that provide some useful functionality in regards to editing/formatting.
 The modules used in these scripts are *PyPDF2* and *Reportlab*, so make sure to have those installed when launching them.
 
+## Crop Margins
+This script generates a list of all PDF documents in a folder and calls the [*pdf-crop-margins*](https://pypi.org/project/pdfCropMargins/) module on each, so make sure you have it installed. The layout has been preset to crop all pages in a document to the same uniform dimensions, if needed this could of course be changed in the call itself.
+
 ## Remove Metadata
 This script can be used to strip all PDF documents in the same folder as the file off of their Author, Title, Subject, and Producer etc.
 This information will be replaced by empty strings.
