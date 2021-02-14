@@ -10,4 +10,4 @@ pdfs = list_files(dir_path, "pdf")
 
 for pdf in pdfs:
     print("editing "+str(pdf))
-    subprocess.call('pdf-crop-margins -u -s '+pdf, shell=True)
+    subprocess.call('pdf-crop-margins -u -s \"'+pdf+"\"", shell=True)
