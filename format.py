@@ -47,7 +47,7 @@ for pdf in pdfs:
                     #of the large page, subtract the fraction of one pageheight, and also subtract one old pageheight again, to have the first page
                     #be in frame, since the bottom left corner is where the coordinates are anchored.
                 except:
-                    print("error at page "+ str(i+1) +"\t - skipping")
+                    print("error at page "+ str(i+1) +" - skipping")
         widePage.compressContentStreams()
         writer.addPage(widePage)
 
