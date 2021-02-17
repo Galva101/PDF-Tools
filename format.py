@@ -32,20 +32,22 @@ for pdf in pdfs:
         
         for i in range(j,j+verticalCells*horizontalCells):
             if(i<pagecount):
-                print("Processing Page "+str(i+1)+" of "+str(pagecount))     
-                x = i%horizontalCells
-                y = i//horizontalCells
-                y=y%verticalCells #to prevent the y coordinate from getting larger than the new page
-                #print(str(y))
-                #print(str(x))
-                
-                page = reader.getPage(i)
-                widePage.mergeScaledTranslatedPage(page, 1, x*newWidth/horizontalCells, newHeight - (y*newHeight/verticalCells + h),True)
-                #here we insert a new page, because x starts at the left, we can simply take the coordinate of the new page and
-                #multiply the fraction of one pagewidth by it. For Y, because it would start from the bottom, we have to take the new Height
-                #of the large page, subtract the fraction of one pageheight, and also subtract one old pageheight again, to have the first page
-                #be in frame, since the bottom left corner is where the coordinates are anchored.
-
+                try:
+                    print("Processing Page "+str(i+1)+" of "+str(pagecount))     
+                    x = i%horizontalCells
+                    y = i//horizontalCells
+                    y=y%verticalCells #to prevent the y coordinate from getting larger than the new page
+                    #print(str(y))
+                    #print(str(x))
+                    
+                    page = reader.getPage(i)
+                    widePage.mergeScaledTranslatedPage(page, 1, x*newWidth/horizontalCells, newHeight - (y*newHeight/verticalCells + h),True)
+                    #here we insert a new page, because x starts at the left, we can simply take the coordinate of the new page and
+                    #multiply the fraction of one pagewidth by it. For Y, because it would start from the bottom, we have to take the new Height
+                    #of the large page, subtract the fraction of one pageheight, and also subtract one old pageheight again, to have the first page
+                    #be in frame, since the bottom left corner is where the coordinates are anchored.
+                except:
+                    print("error at page "+ str(i+1) +"\t - skipping")
         widePage.compressContentStreams()
         writer.addPage(widePage)
 
